@@ -15,22 +15,12 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter z2,$(TARGET_DEVICE)),)
+ifneq ($(filter gucci,$(TARGET_DEVICE)),)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := TimeService
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_OWNER := qcom
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_TAGS := optional
-LOCAL_CERTIFICATE := platform
-LOCAL_SRC_FILES := vendor/system/app/TimeService/TimeService.apk
-include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libtime_genoff
 LOCAL_MODULE_OWNER := qcom
-LOCAL_SRC_FILES_64 := vendor/system/vendor/lib64/libtime_genoff.so
 LOCAL_SRC_FILES_32 := vendor/system/vendor/lib/libtime_genoff.so
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_SUFFIX := .so
@@ -44,7 +34,6 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libTimeService
 LOCAL_MODULE_OWNER := qcom
-LOCAL_SRC_FILES_64 := vendor/system/vendor/lib64/libTimeService.so
 LOCAL_SRC_FILES_32 := vendor/system/vendor/lib/libTimeService.so
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_SUFFIX := .so
